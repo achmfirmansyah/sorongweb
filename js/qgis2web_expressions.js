@@ -754,3 +754,43 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_proxykepadatanbangunandankeluargapenerimabangunan_5rule0_eval_expression(context) {
+    // class_desil4 = 1 AND class_pdt_bang = 1
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['class_desil4']  == 1) && (feature.properties['class_pdt_bang']  == 1));
+    } else {
+        return ((feature['class_desil4']  == 1) && (feature['class_pdt_bang']  == 1));
+    }
+}
+
+
+function exp_proxykepadatanbangunandankeluargapenerimabangunan_5rule1_eval_expression(context) {
+    // class_pdt_bang = 1 AND class_desil4 = 0
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['class_pdt_bang']  == 1) && (feature.properties['class_desil4']  == 0));
+    } else {
+        return ((feature['class_pdt_bang']  == 1) && (feature['class_desil4']  == 0));
+    }
+}
+
+
+function exp_proxykepadatanbangunandankeluargapenerimabangunan_5rule2_eval_expression(context) {
+    // class_pdt_bang = 0 AND class_desil4 = 1
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['class_pdt_bang']  == 0) && (feature.properties['class_desil4']  == 1));
+    } else {
+        return ((feature['class_pdt_bang']  == 0) && (feature['class_desil4']  == 1));
+    }
+}

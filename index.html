@@ -41,11 +41,11 @@
         <script src="data/klg_desil4_2.js"></script>
         <script src="data/kepadatan_bangunan_perHA_3.js"></script>
         <script src="data/presentase_klg_desil4_4.js"></script>
-        <script src="data/presentase_klg_desil4copy_5.js"></script>
+        <script src="data/proxykepadatanbangunandankeluargapenerimabangunan_5.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-0.9458786364843507,131.21009279621353],[-0.8074545433858747,131.41487592020195]]);
+        }).fitBounds([[-0.9312461751755041,131.24993509742936],[-0.861332601828996,131.3533644906702]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -498,6 +498,9 @@
                         <th scope="row">kepadatan_bang_perha</th>\
                         <td class="visible-with-data" id="kepadatan_bang_perha">' + (feature.properties['kepadatan_bang_perha'] !== null ? autolinker.link(String(feature.properties['kepadatan_bang_perha']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['class_pdt_bang'] !== null ? autolinker.link(String(feature.properties['class_pdt_bang']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -519,7 +522,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,255,255,1.0)',
-                interactive: true,
+                interactive: false,
             }
             }
             if (feature.properties['kepadatan_bang_perha'] >= 12.852479 && feature.properties['kepadatan_bang_perha'] <= 29.320732 ) {
@@ -534,7 +537,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,191,191,1.0)',
-                interactive: true,
+                interactive: false,
             }
             }
             if (feature.properties['kepadatan_bang_perha'] >= 29.320732 && feature.properties['kepadatan_bang_perha'] <= 57.731564 ) {
@@ -549,7 +552,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,128,128,1.0)',
-                interactive: true,
+                interactive: false,
             }
             }
             if (feature.properties['kepadatan_bang_perha'] >= 57.731564 && feature.properties['kepadatan_bang_perha'] <= 149.092286 ) {
@@ -564,7 +567,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,64,64,1.0)',
-                interactive: true,
+                interactive: false,
             }
             }
             if (feature.properties['kepadatan_bang_perha'] >= 149.092286 && feature.properties['kepadatan_bang_perha'] <= 341.673413 ) {
@@ -579,7 +582,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,0,0,1.0)',
-                interactive: true,
+                interactive: false,
             }
             }
         }
@@ -588,7 +591,7 @@
         map.getPane('pane_kepadatan_bangunan_perHA_3').style['mix-blend-mode'] = 'normal';
         var layer_kepadatan_bangunan_perHA_3 = new L.geoJson(json_kepadatan_bangunan_perHA_3, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_kepadatan_bangunan_perHA_3',
             layerName: 'layer_kepadatan_bangunan_perHA_3',
             pane: 'pane_kepadatan_bangunan_perHA_3',
@@ -758,7 +761,7 @@
         });
         bounds_group.addLayer(layer_presentase_klg_desil4_4);
         map.addLayer(layer_presentase_klg_desil4_4);
-        function pop_presentase_klg_desil4copy_5(feature, layer) {
+        function pop_proxykepadatanbangunandankeluargapenerimabangunan_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">nmkec</th>\
@@ -773,49 +776,32 @@
                         <td class="visible-with-data" id="nmsls">' + (feature.properties['nmsls'] !== null ? autolinker.link(String(feature.properties['nmsls']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['nmprov'] !== null ? autolinker.link(String(feature.properties['nmprov']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">jlh_klg_desil_4_kebawah</th>\
+                        <td class="visible-with-data" id="jlh_klg_desil_4_kebawah">' + (feature.properties['jlh_klg_desil_4_kebawah'] !== null ? autolinker.link(String(feature.properties['jlh_klg_desil_4_kebawah']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['nmkab'] !== null ? autolinker.link(String(feature.properties['nmkab']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">jlh_ppd_desil_4_kebawah</th>\
+                        <td class="visible-with-data" id="jlh_ppd_desil_4_kebawah">' + (feature.properties['jlh_ppd_desil_4_kebawah'] !== null ? autolinker.link(String(feature.properties['jlh_ppd_desil_4_kebawah']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['kk'] !== null ? autolinker.link(String(feature.properties['kk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">jumlah_keluarga</th>\
+                        <td class="visible-with-data" id="jumlah_keluarga">' + (feature.properties['jumlah_keluarga'] !== null ? autolinker.link(String(feature.properties['jumlah_keluarga']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['jlh_klg_desil_4_kebawah'] !== null ? autolinker.link(String(feature.properties['jlh_klg_desil_4_kebawah']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">jumlah_penduduk</th>\
+                        <td class="visible-with-data" id="jumlah_penduduk">' + (feature.properties['jumlah_penduduk'] !== null ? autolinker.link(String(feature.properties['jumlah_penduduk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['jlh_ppd_desil_4_kebawah'] !== null ? autolinker.link(String(feature.properties['jlh_ppd_desil_4_kebawah']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">wilker_btt</th>\
+                        <td class="visible-with-data" id="wilker_btt">' + (feature.properties['wilker_btt'] !== null ? autolinker.link(String(feature.properties['wilker_btt']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['jumlah_keluarga'] !== null ? autolinker.link(String(feature.properties['jumlah_keluarga']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">presentase_keluarga_desil4</th>\
+                        <td class="visible-with-data" id="presentase_keluarga_desil4">' + (feature.properties['presentase_keluarga_desil4'] !== null ? autolinker.link(String(feature.properties['presentase_keluarga_desil4']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['jumlah_penduduk'] !== null ? autolinker.link(String(feature.properties['jumlah_penduduk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wilker_btt'] !== null ? autolinker.link(String(feature.properties['wilker_btt']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wilker_bttk'] !== null ? autolinker.link(String(feature.properties['wilker_bttk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wilker_bku'] !== null ? autolinker.link(String(feature.properties['wilker_bku']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wilker_bbtt_nonusaha'] !== null ? autolinker.link(String(feature.properties['wilker_bbtt_nonusaha']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wilker_usaha'] !== null ? autolinker.link(String(feature.properties['wilker_usaha']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['wilker_kk'] !== null ? autolinker.link(String(feature.properties['wilker_kk']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['presentase_keluarga_desil4'] !== null ? autolinker.link(String(feature.properties['presentase_keluarga_desil4']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Category'] !== null ? autolinker.link(String(feature.properties['Category']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">kepadatan_bang_perha</th>\
+                        <td class="visible-with-data" id="kepadatan_bang_perha">' + (feature.properties['kepadatan_bang_perha'] !== null ? autolinker.link(String(feature.properties['kepadatan_bang_perha']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -824,11 +810,15 @@
 			});
 			layer.bindPopup(content, { maxHeight: 400 });
         }
-
-        function style_presentase_klg_desil4copy_5_0(feature) {
-            if (feature.properties['presentase_keluarga_desil4'] >= 0.000000 && feature.properties['presentase_keluarga_desil4'] <= 11.827957 ) {
-                return {
-                pane: 'pane_presentase_klg_desil4copy_5',
+        function style_proxykepadatanbangunandankeluargapenerimabangunan_5_0(feature) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            // Start of if blocks and style check logic
+            if (exp_proxykepadatanbangunandankeluargapenerimabangunan_5rule0_eval_expression(context)) {
+                  return {
+                pane: 'pane_proxykepadatanbangunandankeluargapenerimabangunan_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -837,13 +827,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['presentase_keluarga_desil4'] >= 11.827957 && feature.properties['presentase_keluarga_desil4'] <= 25.925926 ) {
-                return {
-                pane: 'pane_presentase_klg_desil4copy_5',
+                fillColor: 'rgba(202,20,50,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_proxykepadatanbangunandankeluargapenerimabangunan_5rule1_eval_expression(context)) {
+                  return {
+                pane: 'pane_proxykepadatanbangunandankeluargapenerimabangunan_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -852,13 +842,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,191,191,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['presentase_keluarga_desil4'] >= 25.925926 && feature.properties['presentase_keluarga_desil4'] <= 38.421053 ) {
-                return {
-                pane: 'pane_presentase_klg_desil4copy_5',
+                fillColor: 'rgba(227,230,51,1.0)',
+                interactive: true,
+            };
+                }
+                else if (exp_proxykepadatanbangunandankeluargapenerimabangunan_5rule2_eval_expression(context)) {
+                  return {
+                pane: 'pane_proxykepadatanbangunandankeluargapenerimabangunan_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -867,13 +857,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,128,128,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['presentase_keluarga_desil4'] >= 38.421053 && feature.properties['presentase_keluarga_desil4'] <= 55.555556 ) {
+                fillColor: 'rgba(235,79,6,1.0)',
+                interactive: true,
+            };
+                }
+            else {
                 return {
-                pane: 'pane_presentase_klg_desil4copy_5',
+                pane: 'pane_proxykepadatanbangunandankeluargapenerimabangunan_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -882,40 +872,25 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,64,64,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['presentase_keluarga_desil4'] >= 55.555556 && feature.properties['presentase_keluarga_desil4'] <= 100.000000 ) {
-                return {
-                pane: 'pane_presentase_klg_desil4copy_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,0,0,1.0)',
-                interactive: false,
-            }
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: true,
+            };
             }
         }
-        map.createPane('pane_presentase_klg_desil4copy_5');
-        map.getPane('pane_presentase_klg_desil4copy_5').style.zIndex = 405;
-        map.getPane('pane_presentase_klg_desil4copy_5').style['mix-blend-mode'] = 'normal';
-        var layer_presentase_klg_desil4copy_5 = new L.geoJson(json_presentase_klg_desil4copy_5, {
+        map.createPane('pane_proxykepadatanbangunandankeluargapenerimabangunan_5');
+        map.getPane('pane_proxykepadatanbangunandankeluargapenerimabangunan_5').style.zIndex = 405;
+        map.getPane('pane_proxykepadatanbangunandankeluargapenerimabangunan_5').style['mix-blend-mode'] = 'normal';
+        var layer_proxykepadatanbangunandankeluargapenerimabangunan_5 = new L.geoJson(json_proxykepadatanbangunandankeluargapenerimabangunan_5, {
             attribution: '',
-            interactive: false,
-            dataVar: 'json_presentase_klg_desil4copy_5',
-            layerName: 'layer_presentase_klg_desil4copy_5',
-            pane: 'pane_presentase_klg_desil4copy_5',
-            onEachFeature: pop_presentase_klg_desil4copy_5,
-            style: style_presentase_klg_desil4copy_5_0,
+            interactive: true,
+            dataVar: 'json_proxykepadatanbangunandankeluargapenerimabangunan_5',
+            layerName: 'layer_proxykepadatanbangunandankeluargapenerimabangunan_5',
+            pane: 'pane_proxykepadatanbangunandankeluargapenerimabangunan_5',
+            onEachFeature: pop_proxykepadatanbangunandankeluargapenerimabangunan_5,
+            style: style_proxykepadatanbangunandankeluargapenerimabangunan_5_0,
         });
-        bounds_group.addLayer(layer_presentase_klg_desil4copy_5);
-        map.addLayer(layer_presentase_klg_desil4copy_5);
+        bounds_group.addLayer(layer_proxykepadatanbangunandankeluargapenerimabangunan_5);
+        map.addLayer(layer_proxykepadatanbangunandankeluargapenerimabangunan_5);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -971,12 +946,12 @@
         });
         var overlaysTree = [
         {label: '<b>Sorong</b>',  selectAllCheckbox: true, children: [
-            {label: 'presentase_klg_desil4 copy<br /><table><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4copy_5_0120.png" /></td><td>0 - 12</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4copy_5_12261.png" /></td><td>12 - 26</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4copy_5_26382.png" /></td><td>26 - 38</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4copy_5_38563.png" /></td><td>38 - 56</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4copy_5_561004.png" /></td><td>56 - 100</td></tr></table>', layer: layer_presentase_klg_desil4copy_5},
+            {label: 'proxy kepadatan bangunan dan keluarga penerima bangunan<br /><table><tr><td style="text-align: center;"><img src="legend/proxykepadatanbangunandankeluargapenerimabangunan_5_padatbangunandanpadatkeluargapenerimabantuan0.png" /></td><td>padat bangunan dan padat keluarga penerima bantuan</td></tr><tr><td style="text-align: center;"><img src="legend/proxykepadatanbangunandankeluargapenerimabangunan_5_padatbangunannamuntidakpadatkeluargapenerimabantuan1.png" /></td><td>padat bangunan namun tidak padat keluarga penerima bantuan</td></tr><tr><td style="text-align: center;"><img src="legend/proxykepadatanbangunandankeluargapenerimabangunan_5_padatkeluargapenerimabantuannamuntidakpadatbangunan2.png" /></td><td>padat keluarga penerima bantuan namun tidak padat bangunan</td></tr><tr><td style="text-align: center;"><img src="legend/proxykepadatanbangunandankeluargapenerimabangunan_5_tidakpadat3.png" /></td><td>tidak padat</td></tr></table>', layer: layer_proxykepadatanbangunandankeluargapenerimabangunan_5},
             {label: 'presentase_klg_desil4<br /><table><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4_4_0120.png" /></td><td>0 - 12</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4_4_12261.png" /></td><td>12 - 26</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4_4_26382.png" /></td><td>26 - 38</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4_4_38563.png" /></td><td>38 - 56</td></tr><tr><td style="text-align: center;"><img src="legend/presentase_klg_desil4_4_561004.png" /></td><td>56 - 100</td></tr></table>', layer: layer_presentase_klg_desil4_4},
             {label: 'kepadatan_bangunan_perHA<br /><table><tr><td style="text-align: center;"><img src="legend/kepadatan_bangunan_perHA_3_0130.png" /></td><td>0 - 13</td></tr><tr><td style="text-align: center;"><img src="legend/kepadatan_bangunan_perHA_3_13291.png" /></td><td>13 - 29</td></tr><tr><td style="text-align: center;"><img src="legend/kepadatan_bangunan_perHA_3_29582.png" /></td><td>29 - 58</td></tr><tr><td style="text-align: center;"><img src="legend/kepadatan_bangunan_perHA_3_581493.png" /></td><td>58 - 149</td></tr><tr><td style="text-align: center;"><img src="legend/kepadatan_bangunan_perHA_3_1493424.png" /></td><td>149 - 342</td></tr></table>', layer: layer_kepadatan_bangunan_perHA_3},
             {label: 'klg_desil4<br /><table><tr><td style="text-align: center;"><img src="legend/klg_desil4_2_0170.png" /></td><td>0 - 17</td></tr><tr><td style="text-align: center;"><img src="legend/klg_desil4_2_17401.png" /></td><td>17 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/klg_desil4_2_40792.png" /></td><td>40 - 79</td></tr><tr><td style="text-align: center;"><img src="legend/klg_desil4_2_791373.png" /></td><td>79 - 137</td></tr><tr><td style="text-align: center;"><img src="legend/klg_desil4_2_1372494.png" /></td><td>137 - 249</td></tr></table>', layer: layer_klg_desil4_2},
             {label: 'jumlah_btt<br /><table><tr><td style="text-align: center;"><img src="legend/jumlah_btt_1_0240.png" /></td><td>0 - 24</td></tr><tr><td style="text-align: center;"><img src="legend/jumlah_btt_1_24491.png" /></td><td>24 - 49</td></tr><tr><td style="text-align: center;"><img src="legend/jumlah_btt_1_49892.png" /></td><td>49 - 89</td></tr><tr><td style="text-align: center;"><img src="legend/jumlah_btt_1_892153.png" /></td><td>89 - 215</td></tr><tr><td style="text-align: center;"><img src="legend/jumlah_btt_1_2153364.png" /></td><td>215 - 336</td></tr></table>', layer: layer_jumlah_btt_1},]},
-            {label: "Google Hybrid", layer: layer_GoogleHybrid_0},]
+            {label: "Google Hybrid", layer: layer_GoogleHybrid_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -984,9 +959,59 @@
             //openedSymbol: '&#8863; &#x1f5c1;',
             //collapseAll: 'Collapse all',
             //expandAll: 'Expand all',
-            collapsed: true,
+            collapsed: false, 
         });
         lay.addTo(map);
+		document.addEventListener("DOMContentLoaded", function() {
+            // set new Layers List height which considers toggle icon
+            function newLayersListHeight() {
+                var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
+                if (layerScrollbarElement) {
+                    var layersListElement = document.querySelector('.leaflet-control-layers-list');
+                    var originalHeight = layersListElement.style.height 
+                        || window.getComputedStyle(layersListElement).height;
+                    var newHeight = parseFloat(originalHeight) - 50;
+                    layersListElement.style.height = newHeight + 'px';
+                }
+            }
+            var isLayersListExpanded = true;
+            var controlLayersElement = document.querySelector('.leaflet-control-layers');
+            var toggleLayerControl = document.querySelector('.leaflet-control-layers-toggle');
+            // toggle Collapsed/Expanded and apply new Layers List height
+            toggleLayerControl.addEventListener('click', function() {
+                if (isLayersListExpanded) {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                } else {
+                    controlLayersElement.classList.add('leaflet-control-layers-expanded');
+                }
+                isLayersListExpanded = !isLayersListExpanded;
+                newLayersListHeight()
+            });	
+			// apply new Layers List height if toggle layerstree
+			if (controlLayersElement) {
+				controlLayersElement.addEventListener('click', function(event) {
+					var toggleLayerHeaderPointer = event.target.closest('.leaflet-layerstree-header-pointer span');
+					if (toggleLayerHeaderPointer) {
+						newLayersListHeight();
+					}
+				});
+			}
+            // Collapsed/Expanded at Start to apply new height
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            setTimeout(function() {
+                toggleLayerControl.click();
+            }, 10);
+            // Collapsed touch/small screen
+            var isSmallScreen = window.innerWidth < 650;
+            if (isSmallScreen) {
+                setTimeout(function() {
+                    controlLayersElement.classList.remove('leaflet-control-layers-expanded');
+                    isLayersListExpanded = !isLayersListExpanded;
+                }, 500);
+            }  
+        });       
         setBounds();
         </script>        
     </body>
